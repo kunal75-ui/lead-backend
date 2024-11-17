@@ -5,6 +5,7 @@
   "main": "server.ts",
   "scripts": {
     "build": "rm -rf dist && tsc --build",
+    "prod": "NODE_ENV=production nodemon ./src/server.ts",
     "test": "jest",
     "dev": "nodemon"
   },

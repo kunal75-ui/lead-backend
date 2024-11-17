@@ -26,15 +26,15 @@ export interface ILead extends Document {
     leadName: string;
     contactNumber: string;
     email: string;
-    address: string;
+    address?: string;
     status: string;
-    assignedTo: mongoose.Types.ObjectId;
-    nextFollowUpDate: Date;
-    nextFollowUpTime: string;
-    leadSource: string;
-    conversionDate?: Date;
-    leadNotes?: string;
-    customerType?: string;
-    purchaseHistory?: string[];
-    medicalNeeds?: string[];
+    // assignedTo: mongoose.Types.ObjectId;
+    // nextFollowUpDate: Date;
+    // nextFollowUpTime: string;
+    // leadSource: string;
+    // conversionDate?: Date;
+    // leadNotes?: string;
+    // customerType?: string;
+    // purchaseHistory?: string[];
+    // medicalNeeds?: string[];
 }

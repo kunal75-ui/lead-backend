@@ -64,7 +64,7 @@ export const authGuard = async (req: Request, res: Response, next: NextFunction)
     res.cookie('auth', authToken, {
       secure: true,
       expires: dayjs().subtract(5, 'minute').toDate(),
-      sameSite: 'strict',
+      sameSite: 'none',
     });
 
     console.error('Authentication error:', error);

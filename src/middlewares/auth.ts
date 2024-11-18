@@ -62,6 +62,7 @@ export const authGuard = async (req: Request, res: Response, next: NextFunction)
     // Invalidate Cookie on Error
     req.isAuthenticated = false
     res.cookie('auth', authToken, {
+      httpOnly: true,
       secure: true,
       expires: dayjs().subtract(5, 'minute').toDate(),
       sameSite: 'none',

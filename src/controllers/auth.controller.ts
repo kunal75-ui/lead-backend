@@ -28,11 +28,11 @@ export const login = async (req: Request, res: Response, next: NextFunction): Pr
 
     const cookieOption: CookieOptions = {
       secure: true,
-      sameSite: 'strict',
+      sameSite: 'none',
     };
 
 
-    res.cookie('auth', authToken)
+    res.cookie('auth', authToken,cookieOption)
     return res.status(200).json({
       message: 'Login successful',
       // authToken,

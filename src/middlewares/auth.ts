@@ -59,14 +59,12 @@ export const authGuard = async (req: Request, res: Response, next: NextFunction)
 
     next();
   } catch (error) {
-    // Invalidate Cookie on Error
     req.isAuthenticated = false
     res.cookie('auth', authToken, {
       httpOnly: true,
       secure: true,
       expires: dayjs().subtract(5, 'minute').toDate(),
       sameSite: 'none',
-      domain:'https://lead-backend-f0g0.onrender.com'
     });
 
     console.error('Authentication error:', error);
